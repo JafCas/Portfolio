@@ -1,6 +1,7 @@
 /* TODO Eliminar esto despues */
 * {
-  background-color: grey;
+  /* background-color: grey; */
+  box-sizing: border-box;
 }
 
 .App {

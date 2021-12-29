@@ -1,5 +1,16 @@
 import React from "react";
-import { Container, ButtonContainer, LogoText, OptionText, ThemeButton } from "./styles";
+// import { Link, NavLink } from "react-router-dom";
+
+import {
+  MainContainer,
+  MultipleButtonContainer,
+  LogoLink,
+  ButtonLink,
+  ThemeButton,
+  LogoContainer,
+  ButtonContainer,
+  // TestNavLink,
+} from "./styles";
 
 export interface NavBarProps {
   onPress?: () => void;
@@ -8,15 +19,23 @@ export interface NavBarProps {
 function NavBar({ onPress }: NavBarProps) {
   return (
     // <div style={{ width: "90%", height: "200px", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", backgroundColor: "blue"}}>
-      <Container>
-        <LogoText>Leonel Castillo</LogoText>
-        <ButtonContainer>
-          <OptionText onClick={()=>{console.log("Apretao el about")}}>About</OptionText>
-          <OptionText>Projects</OptionText>
-          <OptionText>Contact</OptionText>
-          <ThemeButton>ICON</ThemeButton>
-        </ButtonContainer>
-      </Container>
+    <MainContainer>
+      <LogoLink to="/">
+        <LogoContainer>Leonel Castnz</LogoContainer>
+      </LogoLink>
+      <MultipleButtonContainer>
+        <ButtonLink to="/about">
+          <ButtonContainer>About</ButtonContainer>
+        </ButtonLink>
+        <ButtonLink to="/projects">
+          <ButtonContainer>Projects</ButtonContainer>
+        </ButtonLink>
+        <ButtonLink to="/contact">
+          <ButtonContainer>Contact</ButtonContainer>
+        </ButtonLink>
+        <ThemeButton>ICON</ThemeButton>
+      </MultipleButtonContainer>
+    </MainContainer>
     // </div>
   );
 }
