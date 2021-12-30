@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link, NavLink } from "react-router-dom";
 
 import {
   MainContainer,
@@ -9,6 +8,7 @@ import {
   ThemeButton,
   LogoContainer,
   ButtonContainer,
+
   // TestNavLink,
 } from "./styles";
 
@@ -21,17 +21,34 @@ function NavBar({ onPress }: NavBarProps) {
     // <div style={{ width: "90%", height: "200px", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", backgroundColor: "blue"}}>
     <MainContainer>
       <LogoLink to="/">
-        <LogoContainer>Leonel Castnz</LogoContainer>
+        {({ isActive }) => (
+          <LogoContainer className={isActive ? "selected" : undefined}>
+            Leonel Castnz
+          </LogoContainer>
+        )}
       </LogoLink>
       <MultipleButtonContainer>
         <ButtonLink to="/about">
-          <ButtonContainer>About</ButtonContainer>
+          {({ isActive }) => (
+            <ButtonContainer className={isActive ? "selected" : undefined}>
+              About
+            </ButtonContainer>
+          )}
         </ButtonLink>
+
         <ButtonLink to="/projects">
-          <ButtonContainer>Projects</ButtonContainer>
+          {({ isActive }) => (
+            <ButtonContainer className={isActive ? "selected" : undefined}>
+              Projects
+            </ButtonContainer>
+          )}
         </ButtonLink>
         <ButtonLink to="/contact">
-          <ButtonContainer>Contact</ButtonContainer>
+          {({ isActive }) => (
+            <ButtonContainer className={isActive ? "selected" : undefined}>
+              Contact
+            </ButtonContainer>
+          )}
         </ButtonLink>
         <ThemeButton>ICON</ThemeButton>
       </MultipleButtonContainer>

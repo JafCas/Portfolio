@@ -32,14 +32,16 @@ export const LogoContainer = styled.div`
   /* background-color: #e29578; */
   display: flex;
   height: 50px;
+  width: 120%;
   align-items: center;
+  justify-content: center;
   text-transform: uppercase;
-  font-size: 20px;
+  /* font-size: 40px; */
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
-    background-color: #90e0ef;
+    /* background-color: #90e0ef; */
   }
 `;
 
@@ -55,18 +57,30 @@ export const ButtonContainer = styled.div`
 
   &:hover {
     text-decoration: underline;
-    background-color: #90e0ef;
+    /* background-color: #90e0ef; */
   }
 `;
 
 export const LogoLink = styled(Link)`
   text-decoration: none;
+  color: #000;
+  font-size: 25px;
+
+  .selected{
+    text-decoration: underline;
+    color: #a8dadc;
+  }
 `;
 
 export const ButtonLink = styled(Link)`
   text-decoration: none;
   margin: 0 15px 0 15px;
   color: #000;
+
+  .selected{
+    text-decoration: underline;
+    color: #a8dadc;
+  }
 `;
 
 export const ThemeButton = styled.button`
@@ -80,3 +94,4 @@ export const ThemeButton = styled.button`
     cursor: pointer;
   }
 `
+

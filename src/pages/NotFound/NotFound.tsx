@@ -1,8 +1,6 @@
 import React from "react";
 
-export interface MyPortfolioProps {}
-
-function MyPortfolio() {
+function NotFound() {
   return (
     <div
       style={{
@@ -14,9 +12,9 @@ function MyPortfolio() {
         height: "100vh",
       }}
     >
-      MyPortfolio
+      404 Not Found
     </div>
   );
 }
 
-export default MyPortfolio;
+export default NotFound;
