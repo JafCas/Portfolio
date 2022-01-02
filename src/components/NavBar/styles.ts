@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.nav`
   display: flex;
   flex-direction: row;
   width: calc(100% - 20px);
@@ -66,7 +66,7 @@ export const LogoLink = styled(Link)`
   color: #000;
   font-size: 25px;
 
-  .selected{
+  .selected {
     text-decoration: underline;
     color: #a8dadc;
   }
@@ -77,7 +77,7 @@ export const ButtonLink = styled(Link)`
   margin: 0 15px 0 15px;
   color: #000;
 
-  .selected{
+  .selected {
     text-decoration: underline;
     color: #a8dadc;
   }
@@ -90,8 +90,17 @@ export const ThemeButton = styled.button`
 
   &:hover {
     text-decoration: underline;
-    background-color: #a5a58d;
     cursor: pointer;
   }
-`
+  &.light {
+    background-color: #a5a58d;
+  }
 
+  &.dark {
+    background-color: #6d6875;
+  }
+`;
+
+export const ThemeButtonContainer = styled.div`
+  /* background-color: red; */
+`;

@@ -1,21 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import { MainContainer } from "./styles";
+import { ThemeContext } from "../../context/themeContext";
 
 export interface MyPortfolioProps {}
 
 function MyPortfolio() {
+  const currentTheme = useContext(ThemeContext);
   return (
-    <div
-      style={{
-        backgroundColor: "#f8edeb",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100vh",
-      }}
-    >
-      MyPortfolio
-    </div>
+      <MainContainer>My Portfolio</MainContainer>
   );
 }
 

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+// import { ThemeContext } from "../../context/themeContext";
+// import "./nav-bar.css";
 
 import {
   MainContainer,
@@ -8,7 +10,7 @@ import {
   ThemeButton,
   LogoContainer,
   ButtonContainer,
-
+  ThemeButtonContainer,
   // TestNavLink,
 } from "./styles";
 
@@ -17,6 +19,19 @@ export interface NavBarProps {
 }
 
 function NavBar({ onPress }: NavBarProps) {
+  const [currentTheme, setCurrentTheme] = useState("light");
+  // let { theme, themeSwitchHandler } = useContext(ThemeContext);
+
+  const themeIconHandler = () => {
+    if (currentTheme === "light") {
+      setCurrentTheme("dark");
+    } else if (currentTheme === "dark") {
+      setCurrentTheme("light");
+    }
+    // themeSwitchHandler(theme);
+    console.log("current theme:", currentTheme);
+  };
+
   return (
     // <div style={{ width: "90%", height: "200px", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", backgroundColor: "blue"}}>
     <MainContainer>
@@ -50,7 +65,9 @@ function NavBar({ onPress }: NavBarProps) {
             </ButtonContainer>
           )}
         </ButtonLink>
-        <ThemeButton>ICON</ThemeButton>
+        <ThemeButton onClick={themeIconHandler} className={currentTheme}>
+          ICON
+        </ThemeButton>
       </MultipleButtonContainer>
     </MainContainer>
     // </div>
